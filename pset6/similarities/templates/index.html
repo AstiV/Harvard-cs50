@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <!-- Send POST request to the route /compare -->
+        <form action="/compare" enctype="multipart/form-data" method="post">
+            <!-- Let User chose file1 & file2, algorithm (lines/sentences/substrings) and length -->
+                <!-- Use <input> tags -->
+                <!-- and give each tag a name attribute (file1, file2, algorithm, lenght) -->
+                <!-- and give each input a type attribute (file, radio, number) -->
+                <!-- for algorithm, give each input tag a value attribute (lines, sentences, substrings) -->
+
+            <!-- https://wiki.selfhtml.org/wiki/HTML/Formulare/input/Radio-Buttons_und_Checkboxen -->
+            <input type="file" name="file1"/>
+            <input type="file" name="file2"/>
+            <label>
+                <input type="radio" name="algorithm" value="lines"/>
+                Lines
+            </label>
+            <label>
+                <input type="radio" name="algorithm" value="sentences"/>
+                Sentences
+            </label>
+            <label>
+                <input type="radio" name="algorithm" value="substrings"/>
+                Substrings
+            </label>
+            <label>
+                <input type="number" name="length"/>
+                Length
+            </label>
+
+            <!-- Add button to submit form -->
+            <button type="submit">Compare</button>
+        </form>
+    </div>
+
+{% endblock %}
